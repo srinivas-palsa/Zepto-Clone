@@ -244,9 +244,31 @@ header {
   font-size: 0.8rem;
 }
 
-
-.category-img>img{
+.category-img > img {
   cursor: pointer;
   height: 3rem;
   width: 3rem;
+}
+
+/*! Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  height: 7rem;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.301);
+  background-color: rgb(253, 253, 253);
+
+}
+
+footer > h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: rgb(96, 8, 198);
+}
+footer > p {
+  font-size: 1rem;
 }
