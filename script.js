@@ -18,7 +18,7 @@ userLocation.addEventListener("click", () => {
   })
 })
 
-
+  
 //! Fetching Categories
 let fetchCategories = async () => {
   let response = await fetch("https://dummyjson.com/products/categories")

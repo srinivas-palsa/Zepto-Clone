@@ -14,6 +14,9 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 #nav1 {
   flex-basis: 50%;
@@ -175,4 +178,68 @@ header {
   font-weight: 600;
   text-align: center;
   word-break: break-all;
+}
+
+#category-items > .category-card:nth-child(4n + 1) > .category-img {
+  background-color: rgba(255, 0, 0, 0.348);
+}
+#category-items > .category-card:nth-child(4n + 2) > .category-img {
+  background-color: rgba(0, 128, 0, 0.257);
+}
+#category-items > .category-card:nth-child(4n + 3) > .category-img {
+  background-color: rgba(0, 0, 255, 0.119);
+}
+#category-items > .category-card:nth-child(4n + 4) > .category-img {
+  background-color: rgba(255, 255, 0, 0.345);
+}
+
+/*! HIGHLIGHTS */
+#highlights {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlight-containers {
+  height: 7.5rem;
+  width: 14rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem;
+}
+
+.one {
+  background-color: rgb(243, 232, 255);
+}
+
+.two {
+  background-color: rgb(254, 249, 194);
+}
+
+.three {
+  background-color: rgb(219, 252, 231);
+}
+
+.four {
+  background-color: rgb(252, 231, 243);
+}
+
+.highlight-logo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.highlight-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.highlight-description {
+  font-size: 0.8rem;
 }
