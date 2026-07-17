@@ -164,13 +164,22 @@ header {
 }
 .category-img {
   /* border: 2px solid purple; */
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 5rem;
+  width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10%;
   background-color: #ff0000;
+}
+
+/*@ Hover Effects  */
+.category-img img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-img:hover img {
+  transform: scale(1.8); /* Increases size by 10% */
 }
 
 .category-name {
@@ -261,7 +270,8 @@ footer {
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.301);
   background-color: rgb(253, 253, 253);
-
+  margin: 0.8rem 0rem;
+  padding: 4rem 0rem;
 }
 
 footer > h2 {
