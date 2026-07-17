@@ -243,3 +243,10 @@ header {
 .highlight-description {
   font-size: 0.8rem;
 }
+
+
+.category-img>img{
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+}
