@@ -148,14 +148,14 @@ let thumbnails = [
 //! Fetching Categories
 let fetchCategories = () => {
   let categoryItems = document.getElementById("category-items")
-    thumbnails.forEach((category) => {
+  thumbnails.forEach((category) => {
     categoryItems.innerHTML += `
     <div class="category-card">
         <div class="category-img">
           <img src="${category.url}" alt="${category.name}">
         </div>
         <p class="category-name">${category.name}</p>
-      </div>`
+    </div>`
   })
 }
 fetchCategories()

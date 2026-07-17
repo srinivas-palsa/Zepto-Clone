@@ -56,6 +56,7 @@ nav {
 #location {
   color: #fff;
   font-size: 0.8rem;
+  font-style: italic;
   font-weight: 400;
   cursor: pointer;
 }
@@ -88,7 +89,7 @@ nav {
 /*! HEADER */
 header {
   padding: 5rem 0;
-  height: 550px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +164,7 @@ header {
   align-items: center;
 }
 .category-img {
+  box-shadow: 1px 1px 2px 0px;
   /* border: 2px solid purple; */
   height: 5rem;
   width: 5rem;
