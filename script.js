@@ -152,10 +152,29 @@ let fetchCategories = () => {
     categoryItems.innerHTML += `
     <div class="category-card">
         <div class="category-img">
-          <img src="${category.url}" alt="${category.name}">
+          <img src="${category.url}" alt="${category.slug}">
         </div>
         <p class="category-name">${category.name}</p>
     </div>`
   })
 }
 fetchCategories()
+
+
+
+//! Individual Category 
+let categoryCards = document.querySelectorAll(".category-card")
+categoryCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    let categoryName = card.querySelector("img").alt
+    sessionStorage.setItem("clickedCategory", categoryName)
+    fetchingIndividualCategoryData()
+  })
+})
+
+async function fetchingIndividualCategoryData() {
+  let categoryName = sessionStorage.getItem("clickedCategory")
+  let response = await fetch(`https://dummyjson.com/products/category/${categoryName}`)
+  let { products } = await response.json()
+  localStorage.setItem("clickedCategoryData", JSON.stringify(products))
+}
