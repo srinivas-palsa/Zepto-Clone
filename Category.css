@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/*!  NAV BAR */
+nav {
+  height: 5rem;
+  width: 100%;
+  padding: 0rem 18rem;
+  background-color: rgb(95, 8, 195);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#nav1 {
+  flex-basis: 50%;
+  display: flex;
+}
+
+#logo-address {
+  flex-basis: 33.3%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#logo {
+  border: 1px solid rgba(155, 255, 255, 0.293);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0px 1rem;
+  font-weight: 600;
+  background-color: rgba(226, 223, 235, 0.186);
+}
+
+#address {
+  color: #fff;
+  font-weight: 600;
+}
+#address > p:first-child > span {
+  color: rgb(256, 223, 32);
+}
+
+#location {
+  color: #fff;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+#links {
+  flex-basis: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+#links > a {
+  text-decoration-line: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+#user-cart {
+  flex-basis: 33.3%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  position: relative;
+  right: 20px;
+}
+
+/*! Header */
+#header {
+  height: 10rem;
+  width: 80%;
+  margin: 0rem auto;
+  border: 2px solid red;
+  display: flex;
+}
+
+#logo-image {
+  flex-basis: 20%;
+  border: 2px solid green;
+}
+
+#description {
+  flex-basis: 80%;
+  border: 2px solid blue;
+}

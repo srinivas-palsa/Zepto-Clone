@@ -169,6 +169,7 @@ categoryCards.forEach((card) => {
     let categoryName = card.querySelector("img").alt
     sessionStorage.setItem("clickedCategory", categoryName)
     fetchingIndividualCategoryData()
+    location.assign("./Category.html")
   })
 })
 
