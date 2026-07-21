@@ -41,6 +41,38 @@
   <aside id="header-two"></aside>
 </header>
 
+<!--! CATEGORY ITEMS -->
+<section id="category-items">
+  <aside id="sidebar-one">
+    <h3>Sort By</h3>
+    <div class="radio-group">
+      <input type="radio" name="sort" id="relevance" value="Relevance" checked>
+      <label for="relevance">Relevance</label>
+    </div>
+    <div class="radio-group">
+      <input type="radio" name="sort" id="priceAsc" value="Price Asc">
+      <label for="priceAsc">Price Asc</label>
+    </div>
+    <div class="radio-group">
+      <input type="radio" name="sort" id="priceDesc" value="Price Desc">
+      <label for="priceDesc">Price Desc</label>
+    </div>
+    <div class="radio-group">
+      <input type="radio" name="sort" id="discount" value="Discount">
+      <label for="discount">Discount</label>
+    </div>
+    <h3>Max price: ₹100000</h3>
+    <input type="range" name="max-price" id="max-price" min="0" max="100000" value="100000">
+
+    <div class="checkbox-group">
+      <input type="checkbox" name="In-stock" id="inStock" value="In Stock Only">
+      <label for="inStock">In Stock Only</label>
+    </div>
+  </aside>
+  <aside id="sidebar-two">
+  </aside>
+</section>
+
 <script src="./Category.js"></script>
 
 <body>
