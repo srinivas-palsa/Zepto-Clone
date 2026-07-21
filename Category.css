@@ -86,20 +86,35 @@ nav {
 }
 
 /*! Header */
-#header {
-  height: 10rem;
+header {
+  height: 7rem;
   width: 80%;
   margin: 0rem auto;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
 }
 
-#logo-image {
-  flex-basis: 20%;
-  border: 2px solid green;
+#header-one {
+  flex-basis: 10%;
+  /* border: 2px solid green; */
+  justify-content: center;
+  align-items: center;
 }
 
-#description {
-  flex-basis: 80%;
-  border: 2px solid blue;
+#header-two {
+  flex-basis: 90%;
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+#header-two>h2{
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+#header-two>p{
+  font-size: 0.8rem;
 }

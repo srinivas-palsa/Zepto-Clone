@@ -19,14 +19,20 @@ userLocation.addEventListener("click", () => {
 })
 
 
+//! Fetching Individual Category Data 
+let categoryDatas = JSON.parse(localStorage.getItem("clickedCategoryData"))
+let categoryName = sessionStorage.getItem("clickedCategory")
+console.log(categoryName)
+console.log(categoryDatas)
+let categoryImage = categoryDatas[0].thumbnail
+console.log(categoryImage)
+let headerOne = document.getElementById("header-one")
+headerOne.innerHTML = `
+<img src = ${categoryImage} alt=${categoryName} height=100 width=100>
+`
 
-let logoImage = document.getElementById("logo-image")
-let name = sessionStorage.getItem("clickedCategory")
-let image = localStorage.getItem("clickedCategoryData")
-// console.log(image)
-
-// logoImage.innerHTML = `
-// <img src=${image.thumbnail} alt=${name}>
-// `
-
-// console.log(image)
+let headerTwo = document.getElementById("header-two")
+headerTwo.innerHTML = `
+<h2>${categoryDatas[0].category.replace("-", " ")}</h2>
+<p>${categoryDatas.length} products. Delivered in 10 minutes</p>
+`
