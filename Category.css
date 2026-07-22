@@ -205,6 +205,10 @@ input {
   right: 10px;
 }
 
+.clicked{
+  color: red;
+}
+
 .product-card-two {
   display: flex;
   flex-direction: column;

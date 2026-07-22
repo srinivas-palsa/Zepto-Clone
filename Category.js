@@ -48,7 +48,7 @@ productsData.forEach((item) => {
         <div class="product-card-one">
           <p class="discount-percentage">${item.discountPercentage}% Off</p>
           <img src=${item.thumbnail} alt=${item.title}>
-          <p class="wishlist"><i class="fa-regular fa-heart"></i></p>
+          <p class="wishlist"><i class="fa-solid fa-heart"></i></p>
         </div>
         <div class="product-card-two">
           <p class="delivery-time">⚡ ${Math.floor(Math.random() * (10 - 5 + 1)) + 5}Mins</p>
@@ -63,4 +63,16 @@ productsData.forEach((item) => {
         </div>
       </article>
   `
+})
+
+
+
+//! Wishlist
+let wishListIcons = document.querySelectorAll(".wishlist>i")
+console.log(wishListIcons)
+wishListIcons.forEach((item) => {
+  console.log(item)
+  item.addEventListener("click", () => {
+    item.classList.toggle("clicked")
+  })
 })
