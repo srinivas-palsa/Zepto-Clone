@@ -44,6 +44,7 @@ let productsData = [...originalData]
 console.log(productsData)
 let sidebarTwo = document.getElementById("sidebar-two")
 function displayingProducts(products) {
+  sidebarTwo.innerHTML=""
   products.forEach((item) => {
     sidebarTwo.innerHTML += `
   <article class="product-cards">
@@ -73,9 +74,7 @@ displayingProducts(productsData)
 
 //! Wishlist
 let wishListIcons = document.querySelectorAll(".wishlist>i")
-console.log(wishListIcons)
 wishListIcons.forEach((item) => {
-  console.log(item)
   item.addEventListener("click", () => {
     item.classList.toggle("clicked")
   })
@@ -84,12 +83,48 @@ wishListIcons.forEach((item) => {
 
 
 //! FILTER FUNCTIONALITY
-let relevance = document.getElementById("relevance") 
+let relevance = document.getElementById("relevance")
 let priceAsc = document.getElementById("priceAsc")
 let priceDesc = document.getElementById("priceDesc")
 let discount = document.getElementById("discount")
 let maxPriceAmount = document.querySelector("#max-price-heading>span")
-let maxPriceValue = document.getElementById("max-price")
+let maxPrice = document.getElementById("max-price")
 let inStock = document.getElementById("inStock")
+// console.log(relevance,priceAsc,priceDesc,discount,maxPriceAmount,maxPrice,inStock)
+function applyingFilters() {
+  let filteredProducts = [...originalData]
 
-console.log(relevance,priceAsc,priceDesc,discount,maxPriceAmount,maxPriceValue,inStock)
+  if (priceAsc.checked) {
+    filteredProducts.sort((a, b) => a.price - b.price)
+  } else if (priceDesc.checked) {
+    filteredProducts.sort((a, b) => b.price - a.price)
+  } else if (discount.checked) {
+    filteredProducts.sort((a, b) => b.discountPercentage - a.discountPercentage)
+  } else {
+    filteredProducts = [...filteredProducts]
+  }
+
+  //*Price Range
+  filteredProducts = filteredProducts.filter((item) => {
+    return (item.price <= maxPrice.value)
+  })
+
+  //*In Stock
+  if (inStock.checked) {
+    filteredProducts = filteredProducts.filter((item) => {
+      return item.stock > 0
+    })
+  }
+  displayingProducts(filteredProducts)
+}
+
+relevance.addEventListener("change", applyingFilters)
+priceAsc.addEventListener("change", applyingFilters)
+priceDesc.addEventListener("change", applyingFilters)
+discount.addEventListener("change", applyingFilters)
+inStock.addEventListener("change", applyingFilters)
+maxPrice.addEventListener("input", () => {
+  maxPriceAmount.innerHTML = maxPrice.value
+  applyingFilters()
+})
+applyingFilters()
