@@ -39,11 +39,13 @@ headerTwo.innerHTML = `
 
 
 //! Displaying Category Items
-let productsData = JSON.parse(localStorage.getItem("clickedCategoryData"))
+let originalData = JSON.parse(localStorage.getItem("clickedCategoryData"))
+let productsData = [...originalData]
 console.log(productsData)
 let sidebarTwo = document.getElementById("sidebar-two")
-productsData.forEach((item) => {
-  sidebarTwo.innerHTML += `
+function displayingProducts(products) {
+  products.forEach((item) => {
+    sidebarTwo.innerHTML += `
   <article class="product-cards">
         <div class="product-card-one">
           <p class="discount-percentage">${item.discountPercentage}% Off</p>
@@ -53,7 +55,7 @@ productsData.forEach((item) => {
         <div class="product-card-two">
           <p class="delivery-time">⚡ ${Math.floor(Math.random() * (10 - 5 + 1)) + 5}Mins</p>
           <p class="product-title">${item.title}</p>
-          <p class="product-brand">${item.brand}</p>
+          <p class="product-brand">${item.brand || "Imported"}</p>
           <div class="product-price">
             <p class="discount-price">$${Math.round(item.price - (item.price * item.discountPercentage / 100))}</p>
             <p class="actual-price">$${item.price}</p>
@@ -63,9 +65,11 @@ productsData.forEach((item) => {
         </div>
       </article>
   `
-})
+  })
 
+}
 
+displayingProducts(productsData)
 
 //! Wishlist
 let wishListIcons = document.querySelectorAll(".wishlist>i")
@@ -76,3 +80,16 @@ wishListIcons.forEach((item) => {
     item.classList.toggle("clicked")
   })
 })
+
+
+
+//! FILTER FUNCTIONALITY
+let relevance = document.getElementById("relevance") 
+let priceAsc = document.getElementById("priceAsc")
+let priceDesc = document.getElementById("priceDesc")
+let discount = document.getElementById("discount")
+let maxPriceAmount = document.querySelector("#max-price-heading>span")
+let maxPriceValue = document.getElementById("max-price")
+let inStock = document.getElementById("inStock")
+
+console.log(relevance,priceAsc,priceDesc,discount,maxPriceAmount,maxPriceValue,inStock)
