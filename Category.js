@@ -62,7 +62,7 @@ function displayingProducts(products) {
             <p class="actual-price">$${item.price}</p>
             <button class="addBtn">Add</button>
           </div>
-          <p class="ratings"><i class="fa-regular fa-star"></i>${item.rating} (${item.stock})</p>
+          <p class="ratings"><i class="fa-solid fa-star"></i>${item.rating} (${item.stock})</p>
         </div>
       </article>
   `
