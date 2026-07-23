@@ -205,7 +205,7 @@ input {
   right: 10px;
 }
 
-.clicked{
+.clicked {
   color: red;
 }
 
@@ -265,4 +265,7 @@ input {
   margin-top: 0.4rem;
   font-size: 1rem;
   font-weight: 500;
+}
+.ratings > i {
+  color: gold;
 }

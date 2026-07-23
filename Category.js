@@ -44,7 +44,7 @@ let productsData = [...originalData]
 console.log(productsData)
 let sidebarTwo = document.getElementById("sidebar-two")
 function displayingProducts(products) {
-  sidebarTwo.innerHTML=""
+  sidebarTwo.innerHTML = ""
   products.forEach((item) => {
     sidebarTwo.innerHTML += `
   <article class="product-cards">
@@ -67,18 +67,20 @@ function displayingProducts(products) {
       </article>
   `
   })
-
+  wishlistIcons()
 }
 
 displayingProducts(productsData)
 
 //! Wishlist
-let wishListIcons = document.querySelectorAll(".wishlist>i")
-wishListIcons.forEach((item) => {
-  item.addEventListener("click", () => {
-    item.classList.toggle("clicked")
+function wishlistIcons() {
+  let wishListIcons = document.querySelectorAll(".wishlist>i")
+  wishListIcons.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("clicked")
+    })
   })
-})
+}
 
 
 
