@@ -18,13 +18,30 @@ userLocation.addEventListener("click", () => {
 })
 
 
-//! Displaying all products 
+//! Displaying all products
 
+let allProducts = []
 async function displayingProducts() {
   let response = await fetch("https://dummyjson.com/products?limit=194")
   let { products } = await response.json()
+  allProducts = products
+  renderProducts(allProducts)
+  let searchBar = document.querySelector("#products-section-1>input")
+  searchBar.addEventListener("input", (e) => {
+    let searchValue = e.target.value.trim().toLowerCase()
+    let filteredProducts = allProducts.filter((item) => {
+      return item.title.trim().toLowerCase().includes(searchValue)
+    })
+    renderProducts(filteredProducts)
+  })
+
+}
+displayingProducts()
+
+
+function renderProducts(products) {
   let productsSection = document.getElementById("products-section-2")
-  console.log(products)
+  productsSection.innerHTML = ""
   products.forEach((item) => {
     productsSection.innerHTML += `
     <article class="product-cards">
@@ -49,7 +66,6 @@ async function displayingProducts() {
   })
   wishlistIcons()
 }
-displayingProducts()
 
 //! Wishlist
 function wishlistIcons() {
